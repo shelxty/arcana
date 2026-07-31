@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://tpx6oa1y4v1j"]
+
+[ext_resource type="Script" uid="uid://7i1yl2o6ieh2" path="res://mechanics/journal.gd" id="1_g4kox"]
+
+[node name="Journal" type="CanvasLayer" unique_id=1769648654]
+script = ExtResource("1_g4kox")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=300581725]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="JournalPanel" type="Control" parent="." unique_id=2084770160]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="JournalPanel" unique_id=475526565]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftPage" type="Control" parent="JournalPanel" unique_id=643400168]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftTextEdit" type="TextEdit" parent="JournalPanel/LeftPage" unique_id=1785287012]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="RightPage" type="Control" parent="JournalPanel" unique_id=1968800737]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RightRichLabel" type="RichTextLabel" parent="JournalPanel/RightPage" unique_id=1618605368]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

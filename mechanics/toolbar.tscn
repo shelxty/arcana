@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ckef3345uqv1x"]
+
+[ext_resource type="PackedScene" uid="uid://dxiik0fb5mmsj" path="res://mechanics/button.tscn" id="1_clsrh"]
+
+[node name="Control" type="HBoxContainer" unique_id=1236404925]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -128.0
+offset_right = 262.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Punch" parent="." unique_id=1088679414 instance=ExtResource("1_clsrh")]
+layout_mode = 2
+
+[node name="Kick" parent="." unique_id=1572165140 instance=ExtResource("1_clsrh")]
+layout_mode = 2
+
+[node name="Electrocute" parent="." unique_id=1728629910 instance=ExtResource("1_clsrh")]
+layout_mode = 2
+
+[node name="Fry" parent="." unique_id=1439145894 instance=ExtResource("1_clsrh")]
+layout_mode = 2
