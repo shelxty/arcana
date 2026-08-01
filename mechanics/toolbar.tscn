@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bqd6ei2vbaaux" path="res://assets/KO_KeyboardComboRight.png" id="7_cvonl"]
 [ext_resource type="Texture2D" uid="uid://kkk374ego74u" path="res://assets/art/WrongTorture.png" id="7_hnuti"]
 [ext_resource type="Texture2D" uid="uid://ihsieb2v3uxc" path="res://assets/art/RightAction.png" id="8_cvonl"]
+[ext_resource type="Texture2D" uid="uid://cvnpc7j2yc6jk" path="res://assets/art/CeilProgressBarEmpty.png" id="9_up1h0"]
+[ext_resource type="Texture2D" uid="uid://datpyw6qg1ta7" path="res://assets/art/CeilProgressBarFull.png" id="10_tbj17"]
 [ext_resource type="Texture2D" uid="uid://hqydpne51o4e" path="res://assets/art/PunchIconCeil.png" id="11_ffq0o"]
 [ext_resource type="Texture2D" uid="uid://cfv1m5mjonl8w" path="res://assets/art/Kick2IconCeil.png" id="12_ooebn"]
 [ext_resource type="Texture2D" uid="uid://wf31t2injf23" path="res://assets/art/Tase2IconCeil.png" id="13_vavjp"]
@@ -209,11 +211,16 @@ texture = ExtResource("7_cvonl")
 
 [node name="HealthBar" type="TextureProgressBar" parent="." unique_id=762326329]
 layout_mode = 0
-offset_left = -2700.0
+offset_left = 500.0
 offset_top = -9880.0
-offset_right = -2660.0
-offset_bottom = -9840.0
-scale = Vector2(200, 200)
+offset_right = 2378.0
+offset_bottom = -8094.0
+scale = Vector2(4, 4)
+max_value = 4.0
+value = 4.0
+rounded = true
+texture_under = ExtResource("9_up1h0")
+texture_progress = ExtResource("10_tbj17")
 
 [node name="VictoryPanel" type="Panel" parent="." unique_id=1808777007]
 layout_mode = 0
@@ -297,3 +304,42 @@ offset_bottom = -2994.0
 scale = Vector2(3, 3)
 mouse_filter = 2
 texture = ExtResource("4_nhm53")
+
+[node name="TimerLabel" type="Label" parent="." unique_id=620103868]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AlarmBorder" type="TextureRect" parent="." unique_id=409828745]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8639.999
+offset_top = -10979.999
+offset_right = 7627.999
+offset_bottom = 533.999
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LosePanel" type="Panel" parent="AlarmBorder" unique_id=860007743]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="AlarmBorder/LosePanel" unique_id=10380000]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LoseLabel" type="Label" parent="AlarmBorder/LosePanel/MarginContainer" unique_id=47413050]
+layout_mode = 2
+text = "You lost!"
+
+[node name="RestartButton" type="Label" parent="AlarmBorder/LosePanel/MarginContainer" unique_id=1994713117]
+layout_mode = 2
+text = "Restart"
+
+[node name="QuitButton" type="Label" parent="AlarmBorder/LosePanel/MarginContainer" unique_id=1687012108]
+layout_mode = 2
+text = "Quit"
