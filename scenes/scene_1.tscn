@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dllgno5aagatv"]
+
+[ext_resource type="Texture2D" uid="uid://drv1ki7t4ne8g" path="res://assets/art/IMG_0008.PNG" id="1_ka884"]
+[ext_resource type="PackedScene" uid="uid://ckef3345uqv1x" path="res://mechanics/toolbar.tscn" id="2_cn2eb"]
+
+[node name="Scene1" type="Control" unique_id=1220913283]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=295364154]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ka884")
+
+[node name="Control" parent="." unique_id=1622590886 instance=ExtResource("2_cn2eb")]
+layout_mode = 1
