@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bomxd3dxcqlas"]
+
+[ext_resource type="PackedScene" uid="uid://b2nae1m5ckrom" path="res://sprites/Ceilinglarp.tscn" id="1_3f6m5"]
+
+[node name="Node2D" type="Node2D" unique_id=282889780]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=208151531]
+offset_right = 1148.0
+offset_bottom = 643.0
+
+[node name="Node2D" parent="." unique_id=1160612189 instance=ExtResource("1_3f6m5")]
+position = Vector2(-359, -1)
