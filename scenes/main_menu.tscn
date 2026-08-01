@@ -105,3 +105,7 @@ metadata/_edit_use_anchors_ = true
 [node name="ceiling" type="Sprite2D" parent="pop_in" unique_id=37961953]
 position = Vector2(1070, 100)
 texture = ExtResource("9_j7ex8")
+
+[connection signal="focus_entered" from="pop_in/start" to="." method="_on_start_focus_entered"]
+[connection signal="focus_entered" from="pop_in/credits" to="." method="_on_credits_focus_entered"]
+[connection signal="focus_entered" from="pop_in/quit" to="." method="_on_quit_focus_entered"]
