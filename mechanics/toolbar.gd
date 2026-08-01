@@ -140,21 +140,27 @@ func _update_progress_label() -> void:
 
 func _complete_combo() -> void:
 	completed_combos += 1
-	health_bar.value = MAX_HEALTH - completed_combos
+	var target_health: float = MAX_HEALTH - completed_combos
+
+	var health_tween = create_tween()
+	health_tween.tween_property(health_bar, "value", target_health, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 	await get_tree().create_timer(0.6).timeout
+	health_bar.value = target_health 
+	print("Health bar value: ", health_bar.value)
+	print("target health: ", target_health)
 	success_label.visible = true
+	health_bar.visible = false
 
 	instruction_panel.visible = false
 	combo_progress_label.visible = false
 
-	
-
 	active_combo = ""
 	combo_step = 0
 
-	await get_tree().create_timer(1,0).timeout
+	await get_tree().create_timer(1.0).timeout
 	success_label.visible = false
+	health_bar.visible = true
 
 	if completed_combos >= COMBOS_TO_WIN:
 		_show_victory()
@@ -164,6 +170,7 @@ func _show_victory() -> void:
 
 	await get_tree().create_timer(1.0).timeout
 	victory_panel.visible = true
+	health_bar.visible = false
 
 	await get_tree().create_timer(3.0).timeout
 	victory_panel.visible = false
