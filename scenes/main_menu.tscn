@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://djnnhnsf3sp6s"]
+
+[ext_resource type="Texture2D" uid="uid://cssnvlvdyle2d" path="res://assets/IMG_0008.PNG" id="1_jk1qb"]
+[ext_resource type="Script" uid="uid://fc1hwdqlfojc" path="res://scenes/main_menu.gd" id="1_rcqid"]
+[ext_resource type="Texture2D" uid="uid://be2wihe3wuyke" path="res://assets/IMG_0009.PNG" id="2_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://dkwaksaitvinl" path="res://assets/IMG_0010.PNG" id="3_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://vhhim8v5g37j" path="res://assets/IMG_0011.PNG" id="4_flqon"]
+[ext_resource type="Texture2D" uid="uid://cugt7krcttxkb" path="res://assets/IMG_0017.PNG" id="5_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://cammmnaab5fgi" path="res://assets/IMG_0012.PNG" id="5_rcqid"]
+[ext_resource type="Texture2D" uid="uid://byingoqqhp5ho" path="res://assets/IMG_0013.PNG" id="6_1ajci"]
+[ext_resource type="Texture2D" uid="uid://2px70dvtw1ot" path="res://assets/IMG_0014.PNG" id="7_7b55j"]
+[ext_resource type="Texture2D" uid="uid://bmggokuhxspuo" path="res://assets/IMG_0015.PNG" id="8_5pajh"]
+[ext_resource type="Texture2D" uid="uid://dinmo6c1w6q7m" path="res://assets/IMG_0018.PNG" id="8_flqon"]
+[ext_resource type="Texture2D" uid="uid://bqsfejqciluwj" path="res://assets/IMG_0016.PNG" id="9_j7ex8"]
+[ext_resource type="Texture2D" uid="uid://cxhmkpns6j3qs" path="res://assets/IMG_0019.PNG" id="11_flqon"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_312mj"]
+texture = ExtResource("4_flqon")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jk1qb"]
+texture = ExtResource("5_lgwnu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_us3np"]
+texture = ExtResource("6_1ajci")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
+texture = ExtResource("8_flqon")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgwnu"]
+texture = ExtResource("8_flqon")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d63gp"]
+texture = ExtResource("8_5pajh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcqid"]
+texture = ExtResource("11_flqon")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ajci"]
+texture = ExtResource("11_flqon")
+
+[node name="main_menu" type="Node2D" unique_id=1416691598]
+script = ExtResource("1_rcqid")
+
+[node name="background" type="Sprite2D" parent="." unique_id=614488880]
+position = Vector2(576, 323.99997)
+scale = Vector2(1.0008688, 1.0015454)
+texture = ExtResource("1_jk1qb")
+
+[node name="Img0009" type="Sprite2D" parent="." unique_id=811030758]
+position = Vector2(573, 322)
+texture = ExtResource("2_5dd4i")
+
+[node name="pop_in" type="Node2D" parent="." unique_id=1430159935]
+
+[node name="magnifying_glass" type="Sprite2D" parent="pop_in" unique_id=106527878]
+position = Vector2(49, 455)
+texture = ExtResource("3_lgwnu")
+
+[node name="start" type="Button" parent="pop_in" unique_id=1857710603]
+offset_left = 171.0
+offset_top = 144.0
+offset_right = 335.0
+offset_bottom = 351.0
+focus_neighbor_left = NodePath("../quit")
+focus_neighbor_right = NodePath("../credits")
+theme_override_styles/normal = SubResource("StyleBoxTexture_312mj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_312mj")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jk1qb")
+metadata/_edit_use_anchors_ = true
+
+[node name="seal_paw_print" type="Sprite2D" parent="pop_in" unique_id=806868163]
+position = Vector2(344, 429)
+texture = ExtResource("5_rcqid")
+
+[node name="credits" type="Button" parent="pop_in" unique_id=785103006]
+offset_left = 466.0
+offset_top = 292.0
+offset_right = 632.0
+offset_bottom = 529.0
+focus_neighbor_left = NodePath("../start")
+focus_neighbor_right = NodePath("../quit")
+theme_override_styles/normal = SubResource("StyleBoxTexture_us3np")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5dd4i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_us3np")
+theme_override_styles/focus = SubResource("StyleBoxTexture_lgwnu")
+metadata/_edit_use_anchors_ = true
+
+[node name="question_mark" type="Sprite2D" parent="pop_in" unique_id=1992413391]
+position = Vector2(737, 162)
+texture = ExtResource("7_7b55j")
+
+[node name="quit" type="Button" parent="pop_in" unique_id=136940060]
+offset_left = 818.0
+offset_top = 226.0
+offset_right = 974.0
+offset_bottom = 447.0
+focus_neighbor_left = NodePath("../credits")
+focus_neighbor_right = NodePath("../start")
+theme_override_styles/normal = SubResource("StyleBoxTexture_d63gp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rcqid")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1ajci")
+metadata/_edit_use_anchors_ = true
+
+[node name="ceiling" type="Sprite2D" parent="pop_in" unique_id=37961953]
+position = Vector2(1070, 100)
+texture = ExtResource("9_j7ex8")
