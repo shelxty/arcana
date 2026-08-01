@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dinmo6c1w6q7m" path="res://assets/IMG_0018.PNG" id="8_flqon"]
 [ext_resource type="Texture2D" uid="uid://bqsfejqciluwj" path="res://assets/IMG_0016.PNG" id="9_j7ex8"]
 [ext_resource type="Texture2D" uid="uid://cxhmkpns6j3qs" path="res://assets/IMG_0019.PNG" id="11_flqon"]
+[ext_resource type="Texture2D" uid="uid://burdi8rr3125a" path="res://assets/logo.png" id="14_1ajci"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os3ys"]
 bg_color = Color(0.5137255, 0.4745098, 0.4392157, 1)
@@ -409,6 +410,11 @@ texture = ExtResource("2_5dd4i")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=581818843]
 libraries/ = SubResource("AnimationLibrary_7b55j")
 autoplay = &"panel_float"
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=712135421]
+position = Vector2(945.00006, 519)
+scale = Vector2(0.31578416, 0.31837913)
+texture = ExtResource("14_1ajci")
 
 [connection signal="focus_entered" from="pop_in/start" to="." method="_on_start_focus_entered"]
 [connection signal="focus_entered" from="pop_in/credits" to="." method="_on_credits_focus_entered"]
