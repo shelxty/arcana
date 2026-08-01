@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dxiik0fb5mmsj" path="res://mechanics/button.tscn" id="1_clsrh"]
 [ext_resource type="Script" uid="uid://c1flry8d1hf0f" path="res://mechanics/toolbar.gd" id="1_v4d7s"]
+[ext_resource type="Texture2D" uid="uid://drv1ki7t4ne8g" path="res://assets/art/IMG_0008.PNG" id="2_nhm53"]
 [ext_resource type="Texture2D" uid="uid://cx56po84xjn8v" path="res://assets/art/Tase1IconCeil.png" id="2_vwbkn"]
 [ext_resource type="Texture2D" uid="uid://b1x58rpwwhryx" path="res://assets/art/Tase3IconCeil.png" id="3_v4d7s"]
 [ext_resource type="Texture2D" uid="uid://dxknjjtjdhvpr" path="res://assets/art/FryIconCeil.png" id="4_nhm53"]
@@ -27,6 +28,19 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.05, 0.05)
 script = ExtResource("1_v4d7s")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1689731554]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8559.999
+offset_top = -10939.999
+offset_right = 7187.999
+offset_bottom = 333.99902
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nhm53")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=277800525]
 layout_mode = 0
@@ -158,3 +172,43 @@ theme_override_font_sizes/font_size = 400
 text = "asdf asdf asdfvasdvfasdfvasdvfasdfv"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="ComboProgressLabel" type="Label" parent="." unique_id=1870418874]
+layout_mode = 0
+offset_left = -7979.999
+offset_top = -10299.999
+offset_right = -7939.999
+offset_bottom = -10276.999
+theme_override_font_sizes/font_size = 600
+text = "asd"
+
+[node name="SuccessLabel" type="Label" parent="." unique_id=243196091]
+layout_mode = 0
+offset_left = -7979.999
+offset_top = -10299.999
+offset_right = -7939.999
+offset_bottom = -10276.999
+theme_override_font_sizes/font_size = 600
+text = "success"
+
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=762326329]
+layout_mode = 0
+offset_left = -7979.999
+offset_top = -10299.999
+offset_right = -7939.999
+offset_bottom = -10259.999
+scale = Vector2(200, 200)
+
+[node name="VictoryPanel" type="Panel" parent="." unique_id=1808777007]
+layout_mode = 0
+offset_left = -7979.999
+offset_top = -10299.999
+offset_right = -7939.999
+offset_bottom = -10259.999
+
+[node name="VictoryLabel" type="Label" parent="VictoryPanel" unique_id=711393842]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 50
+text = "asdfads"
