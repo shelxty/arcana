@@ -1,13 +1,30 @@
 [gd_scene format=3 uid="uid://tpx6oa1y4v1j"]
 
 [ext_resource type="Script" uid="uid://7i1yl2o6ieh2" path="res://mechanics/journal.gd" id="1_g4kox"]
+[ext_resource type="Texture2D" uid="uid://c3mk3a1dh662q" path="res://assets/art/NotebookIconStraight.png" id="2_cn3ql"]
+[ext_resource type="Texture2D" uid="uid://cqjtt8wf1wjsj" path="res://assets/art/NotebookIconTilted.png" id="3_4so2p"]
+[ext_resource type="Texture2D" uid="uid://d1yyioh80en3j" path="res://assets/art/NotebookOpenDefault.png" id="4_4so2p"]
+
+[sub_resource type="Theme" id="Theme_3sdwf"]
+
+[sub_resource type="Theme" id="Theme_cn3ql"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4kox"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4so2p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o5s7f"]
 
 [node name="Journal" type="CanvasLayer" unique_id=1769648654]
 script = ExtResource("1_g4kox")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=300581725]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 204.0
+offset_bottom = 260.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("2_cn3ql")
+texture_pressed = ExtResource("3_4so2p")
+texture_hover = ExtResource("3_4so2p")
 
 [node name="JournalPanel" type="Control" parent="." unique_id=2084770160]
 layout_mode = 3
@@ -16,26 +33,52 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Background" type="TextureRect" parent="JournalPanel" unique_id=475526565]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 445.99988
+offset_top = 172.99994
+offset_right = 1734.9999
+offset_bottom = 1274.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_4so2p")
 
 [node name="LeftPage" type="Control" parent="JournalPanel" unique_id=643400168]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = SubResource("Theme_3sdwf")
 
 [node name="LeftTextEdit" type="TextEdit" parent="JournalPanel/LeftPage" unique_id=1785287012]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 460.0
+offset_top = 192.0
+offset_right = 565.0
+offset_bottom = 382.0
+theme = SubResource("Theme_cn3ql")
+theme_override_colors/font_color = Color(0.18502426, 0.18502483, 0.18502444, 1)
+theme_override_colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g4kox")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4so2p")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_o5s7f")
+wrap_mode = 1
+autowrap_mode = 1
+scroll_smooth = true
 
 [node name="RightPage" type="Control" parent="JournalPanel" unique_id=1968800737]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 464.0
+offset_top = 193.0
+offset_right = 561.0
+offset_bottom = 379.0
 
 [node name="RightRichLabel" type="RichTextLabel" parent="JournalPanel/RightPage" unique_id=1618605368]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 120.0
+offset_top = 1.0
+offset_right = 229.0
+offset_bottom = 186.0
