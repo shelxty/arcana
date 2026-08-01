@@ -1,27 +1,160 @@
 [gd_scene format=3 uid="uid://ckef3345uqv1x"]
 
 [ext_resource type="PackedScene" uid="uid://dxiik0fb5mmsj" path="res://mechanics/button.tscn" id="1_clsrh"]
+[ext_resource type="Script" uid="uid://c1flry8d1hf0f" path="res://mechanics/toolbar.gd" id="1_v4d7s"]
+[ext_resource type="Texture2D" uid="uid://cx56po84xjn8v" path="res://assets/art/Tase1IconCeil.png" id="2_vwbkn"]
+[ext_resource type="Texture2D" uid="uid://b1x58rpwwhryx" path="res://assets/art/Tase3IconCeil.png" id="3_v4d7s"]
+[ext_resource type="Texture2D" uid="uid://dxknjjtjdhvpr" path="res://assets/art/FryIconCeil.png" id="4_nhm53"]
 
-[node name="Control" type="HBoxContainer" unique_id=1236404925]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ki58t"]
+load_path = "res://.godot/imported/PunchIconCeil.png-5edc7eff9184be7a28f67be74cd38557.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hnuti"]
+load_path = "res://.godot/imported/Kick2IconCeil.png-34f6115ea6378bacffa9517f9827f598.ctex"
+
+[node name="Control" type="Control" unique_id=1622590886]
+layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -262.0
-offset_top = -128.0
-offset_right = 262.0
+offset_left = -151.0
+offset_top = -98.0
+offset_right = 7381.0
+offset_bottom = 1688.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.05, 0.05)
+script = ExtResource("1_v4d7s")
 
-[node name="Punch" parent="." unique_id=1088679414 instance=ExtResource("1_clsrh")]
-layout_mode = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=277800525]
+layout_mode = 0
+offset_right = 7528.0
+offset_bottom = 1786.0
 
-[node name="Kick" parent="." unique_id=1572165140 instance=ExtResource("1_clsrh")]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=83598636]
 layout_mode = 2
+stretch_mode = 3
 
-[node name="Electrocute" parent="." unique_id=1728629910 instance=ExtResource("1_clsrh")]
+[node name="Punch" parent="HBoxContainer" unique_id=1088679414 instance=ExtResource("1_clsrh")]
 layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_ki58t")
+texture_pressed = null
+texture_hover = null
+texture_focused = null
 
-[node name="Fry" parent="." unique_id=1439145894 instance=ExtResource("1_clsrh")]
+[node name="HotkeyLabel" type="Label" parent="HBoxContainer/Punch" unique_id=952149256]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = -336.0
+offset_right = -188.0
+offset_bottom = -313.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(25, 25)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "A"
+
+[node name="Kick" parent="HBoxContainer" unique_id=1572165140 instance=ExtResource("1_clsrh")]
 layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_hnuti")
+texture_pressed = null
+texture_hover = null
+texture_focused = null
+flip_h = true
+
+[node name="HotkeyLabel2" type="Label" parent="HBoxContainer/Kick" unique_id=346450555]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -378.0
+offset_top = -336.0
+offset_right = -338.0
+offset_bottom = -313.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(25, 25)
+text = "B"
+
+[node name="Electrocute" parent="HBoxContainer" unique_id=1728629910 instance=ExtResource("1_clsrh")]
+layout_mode = 2
+texture_normal = ExtResource("2_vwbkn")
+texture_pressed = null
+texture_hover = ExtResource("3_v4d7s")
+texture_focused = null
+
+[node name="HotkeyLabel3" type="Label" parent="HBoxContainer/Electrocute" unique_id=324019596]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = -336.0
+offset_right = -188.0
+offset_bottom = -313.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(25, 25)
+text = "C"
+
+[node name="Fry" parent="HBoxContainer" unique_id=1439145894 instance=ExtResource("1_clsrh")]
+layout_mode = 2
+texture_normal = ExtResource("4_nhm53")
+texture_pressed = null
+texture_hover = null
+texture_focused = null
+
+[node name="HotkeyLabel4" type="Label" parent="HBoxContainer/Fry" unique_id=736379591]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -378.0
+offset_top = -336.0
+offset_right = -338.0
+offset_bottom = -313.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(25, 25)
+text = "D"
+
+[node name="InstructionPanel" type="Panel" parent="." unique_id=1947165481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8699.999
+offset_top = -10500.0
+offset_right = 6500.0
+offset_bottom = -10500.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="InstructionPanel" unique_id=1786865534]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InstructionLabel" type="Label" parent="InstructionPanel/MarginContainer" unique_id=1609377404]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 400
+text = "asdf asdf asdfvasdvfasdfvasdvfasdfv"
+horizontal_alignment = 1
+autowrap_mode = 2
