@@ -46,3 +46,7 @@ func _on_quit_focus_entered() -> void:
 	pop_out($pop_in/quit)
 	pop_in($pop_in/credits)
 	pop_in($pop_in/start)
+
+
+func _on_start_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/scene_1.tscn")
