@@ -14,6 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://bqsfejqciluwj" path="res://assets/IMG_0016.PNG" id="9_j7ex8"]
 [ext_resource type="Texture2D" uid="uid://cxhmkpns6j3qs" path="res://assets/IMG_0019.PNG" id="11_flqon"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os3ys"]
+bg_color = Color(0.5137255, 0.4745098, 0.4392157, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_312mj"]
 texture = ExtResource("4_flqon")
 
@@ -38,6 +43,260 @@ texture = ExtResource("11_flqon")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ajci"]
 texture = ExtResource("11_flqon")
 
+[sub_resource type="Animation" id="Animation_rcqid"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(225, -182.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel4:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5816162]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel5:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(207, -117.999985)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel5:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5816162]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-184, -73)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5816162]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-6.0000153, -173)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Panel:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5816162]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Panel3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-72.999985, 201.00009)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Panel3:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5816162]
+}
+
+[sub_resource type="Animation" id="Animation_1ajci"]
+resource_name = "panel_float"
+length = 7.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(225, -182.00003), Vector2(225, -182.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel4:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.05, 6.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.5816162, 0.5816162, 0.5816162]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel5:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.08, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(207, -117.999985), Vector2(201.99998, -109), Vector2(207, -117.999985)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel5:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5.08, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.5816162, 0.5816162, 0.5816162]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.06, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-184, -73), Vector2(-178, -81.99999), Vector2(-184, -73)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.06, 3.09, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.5816162, 0.5816162, 0.5816162, 0.5816162]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.04),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-6.0000153, -173), Vector2(-19.000008, -153)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Panel:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4.04),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5816162, 0.5816162]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Panel3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 5, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-72.999985, 201.00009), Vector2(-61.999985, 183.99998), Vector2(-72.999985, 201.00009)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Panel3:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5816162, 0.5816162]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7b55j"]
+_data = {
+&"RESET": SubResource("Animation_rcqid"),
+&"panel_float": SubResource("Animation_1ajci")
+}
+
 [node name="main_menu" type="Node2D" unique_id=1416691598]
 script = ExtResource("1_rcqid")
 
@@ -46,9 +305,45 @@ position = Vector2(576, 323.99997)
 scale = Vector2(1.0008688, 1.0015454)
 texture = ExtResource("1_jk1qb")
 
-[node name="Img0009" type="Sprite2D" parent="." unique_id=811030758]
-position = Vector2(573, 322)
-texture = ExtResource("2_5dd4i")
+[node name="Panel" type="Panel" parent="." unique_id=978598601]
+offset_left = -6.0000153
+offset_top = -173.0
+offset_right = 337.0
+offset_bottom = -144.0
+rotation = 0.5816162
+theme_override_styles/panel = SubResource("StyleBoxFlat_os3ys")
+
+[node name="Panel2" type="Panel" parent="." unique_id=860675261]
+offset_left = -184.0
+offset_top = -73.0
+offset_right = 159.0
+offset_bottom = -44.0
+rotation = 0.5816162
+theme_override_styles/panel = SubResource("StyleBoxFlat_os3ys")
+
+[node name="Panel3" type="Panel" parent="." unique_id=1175174470]
+offset_left = -72.999985
+offset_top = 201.00009
+offset_right = 270.0
+offset_bottom = 230.00009
+rotation = 0.5816162
+theme_override_styles/panel = SubResource("StyleBoxFlat_os3ys")
+
+[node name="Panel4" type="Panel" parent="." unique_id=1142599367]
+offset_left = 225.0
+offset_top = -182.00003
+offset_right = 567.9936
+offset_bottom = -153.00003
+rotation = 0.5816162
+theme_override_styles/panel = SubResource("StyleBoxFlat_os3ys")
+
+[node name="Panel5" type="Panel" parent="." unique_id=169695296]
+offset_left = 207.0
+offset_top = -117.999985
+offset_right = 550.00024
+offset_bottom = -88.999985
+rotation = 0.5816162
+theme_override_styles/panel = SubResource("StyleBoxFlat_os3ys")
 
 [node name="pop_in" type="Node2D" parent="." unique_id=1430159935]
 
@@ -99,12 +394,21 @@ focus_neighbor_left = NodePath("../credits")
 focus_neighbor_right = NodePath("../start")
 theme_override_styles/normal = SubResource("StyleBoxTexture_d63gp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d63gp")
 theme_override_styles/focus = SubResource("StyleBoxTexture_1ajci")
 metadata/_edit_use_anchors_ = true
 
 [node name="ceiling" type="Sprite2D" parent="pop_in" unique_id=37961953]
 position = Vector2(1070, 100)
 texture = ExtResource("9_j7ex8")
+
+[node name="Img0009" type="Sprite2D" parent="." unique_id=811030758]
+position = Vector2(573, 322)
+texture = ExtResource("2_5dd4i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=581818843]
+libraries/ = SubResource("AnimationLibrary_7b55j")
+autoplay = &"panel_float"
 
 [connection signal="focus_entered" from="pop_in/start" to="." method="_on_start_focus_entered"]
 [connection signal="focus_entered" from="pop_in/credits" to="." method="_on_credits_focus_entered"]
