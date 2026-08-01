@@ -417,5 +417,6 @@ scale = Vector2(0.31578416, 0.31837913)
 texture = ExtResource("14_1ajci")
 
 [connection signal="focus_entered" from="pop_in/start" to="." method="_on_start_focus_entered"]
+[connection signal="pressed" from="pop_in/start" to="." method="_on_start_pressed"]
 [connection signal="focus_entered" from="pop_in/credits" to="." method="_on_credits_focus_entered"]
 [connection signal="focus_entered" from="pop_in/quit" to="." method="_on_quit_focus_entered"]
