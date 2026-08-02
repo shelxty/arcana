@@ -30,6 +30,10 @@ window/stretch/scale_mode="integer"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[gui]
+
+theme/custom_font="uid://b5uw1yj6o2dbe"
+
 [input]
 
 toggle_notebook={
