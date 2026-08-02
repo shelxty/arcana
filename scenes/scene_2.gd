@@ -25,16 +25,16 @@ extends Control
 var combo_text := {
 	"Punch": "Combo: F + Q + P",
 	"Kick": "Combo: 7 + B + alt + A",
-	"Electrocute": "Combo: 0 + V + ",
-	"Fry": "Combo: L + Q + T + H",
+	"Electrocute": "Combo: 0 + V + 1",
+	"Fry": "Combo: Q + P + Z + M",
 }
 
 # Actual input sequences the player must press, in order.
 var combo_sequences := {
 	"Punch": [KEY_F, KEY_Q, KEY_P],
-	"Kick": [KEY_K, KEY_1, KEY_B, KEY_M],
-	"Electrocute": [KEY_SHIFT, KEY_D, KEY_W],
-	"Fry": [KEY_L, KEY_Q, KEY_T, KEY_H],
+	"Kick": [KEY_7, KEY_B, KEY_ALT, KEY_A],
+	"Electrocute": [KEY_0, KEY_V, KEY_W],
+	"Fry": [KEY_Q, KEY_P, KEY_Z, KEY_M],
 }
 
 

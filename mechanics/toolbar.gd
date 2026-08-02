@@ -24,8 +24,8 @@ extends Control
 # Human-readable instructions shown on hover
 var combo_text := {
 	"Punch": "Combo: X + P + M",
-	"Kick": "Combo: 7 + B + alt + A",
-	"Electrocute": "Combo: 0 + V + ",
+	"Kick": "Combo: K + 1 + B + M",
+	"Electrocute": "Combo: Shift + D + W ",
 	"Fry": "Combo: L + Q + T + H",
 }
 
