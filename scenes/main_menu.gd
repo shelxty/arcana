@@ -49,4 +49,4 @@ func _on_quit_focus_entered() -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://mechanics/toolbar.tscn")
+	get_tree().change_scene_to_file("res://scenes/scene_1.tscn")
