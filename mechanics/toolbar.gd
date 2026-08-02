@@ -11,9 +11,7 @@ extends Control
 @onready var correct_flash: TextureRect = $CorrectFlash
 @onready var incorrect_flash: TextureRect = $IncorrectFlash
 
-
 @onready var ceiling: TextureRect = $Ceiling
-
 
 @onready var punch_impact: TextureRect = $PunchImpact
 @onready var kick_impact: TextureRect = $KickImpact
@@ -21,22 +19,30 @@ extends Control
 @onready var electric_wire_impact: TextureRect = $ElectricWireImpact
 @onready var frying_impact: TextureRect = $FryingImpact
 
+@onready var timer_label: Label = $TimerLabel
+@onready var alarm_border: ColorRect = $AlarmBorder
+@onready var lose_panel: Panel = $LosePanel
+@onready var lose_label: Label = $LosePanel/MarginContainer/LoseLabel
+@onready var restart_button: Button = $LosePanel/MarginContainer/RestartButton
+@onready var quit_button: Button = $LosePanel/MarginContainer/QuitButton
+
+
+
+
 # Human-readable instructions shown on hover
 var combo_text := {
 	"Punch": "Combo: X + P + M",
-	"Kick": "Combo: 7 + B + alt + A",
-	"Electrocute": "Combo: 0 + V + ",
+	"Kick": "Combo: K + 1 + B + M",
+	"Electrocute": "Combo: Shift + D + W",
 	"Fry": "Combo: L + Q + T + H",
 }
 
-# Actual input sequences the player must press, in order.
 var combo_sequences := {
 	"Punch": [KEY_X, KEY_P, KEY_M],
 	"Kick": [KEY_K, KEY_1, KEY_B, KEY_M],
 	"Electrocute": [KEY_SHIFT, KEY_D, KEY_W],
 	"Fry": [KEY_L, KEY_Q, KEY_T, KEY_H],
 }
-
 
 var hotkey_to_combo := {
 	KEY_A: "Punch",
@@ -52,7 +58,15 @@ var completed_combos: int = 0
 const COMBOS_TO_WIN := 4
 const MAX_HEALTH := 4
 const FLASH_DURATION := 0.15
-const NEXT_SCENE_PATH := "res://scenes/scene_2.tscn"
+const NEXT_SCENE_PATH := "res://scenes/scene_1.tscn"
+const MAIN_MENU_PATH := "res://scenes/main_menu.tscn" # <-- update to your actual main menu path
+
+# --- Timer ---
+const STAGE_TIME_LIMIT := 20.0
+const ALARM_THRESHOLD := 5.0
+var time_remaining: float = STAGE_TIME_LIMIT
+var timer_running: bool = false
+var alarm_tween: Tween = null
 
 func _ready() -> void:
 	instruction_panel.visible = false
@@ -68,6 +82,9 @@ func _ready() -> void:
 	electric_wire_impact.visible = false
 	frying_impact.visible = false
 
+	alarm_border.visible = false
+	lose_panel.visible = false
+
 	health_bar.max_value = MAX_HEALTH
 	health_bar.value = MAX_HEALTH
 
@@ -75,6 +92,56 @@ func _ready() -> void:
 		var icon: Control = icon_container.get_node(icon_name)
 		icon.mouse_entered.connect(_on_icon_hover.bind(icon_name))
 		icon.mouse_exited.connect(_on_icon_unhover)
+
+	restart_button.pressed.connect(_on_restart_pressed)
+	quit_button.pressed.connect(_on_quit_pressed)
+
+	time_remaining = STAGE_TIME_LIMIT
+	timer_running = true
+	_update_timer_label()
+
+func _process(delta: float) -> void:
+	if not timer_running:
+		return
+
+	time_remaining -= delta
+	if time_remaining <= 0.0:
+		time_remaining = 0.0
+		_update_timer_label()
+		_on_time_up()
+		return
+
+	_update_timer_label()
+
+	if time_remaining <= ALARM_THRESHOLD and alarm_tween == null:
+		_start_alarm()
+	elif time_remaining > ALARM_THRESHOLD and alarm_tween != null:
+		_stop_alarm()
+
+func _update_timer_label() -> void:
+	var seconds_int := int(ceil(time_remaining))
+	var minutes := seconds_int / 60
+	var seconds := seconds_int % 60
+	timer_label.text = "%d:%02d" % [minutes, seconds]
+
+func _start_alarm() -> void:
+	alarm_border.visible = true
+	alarm_tween = create_tween().set_loops()
+	alarm_tween.tween_property(alarm_border, "modulate:a", 1.0, 0.25)
+	alarm_tween.tween_property(alarm_border, "modulate:a", 0.2, 0.25)
+
+func _stop_alarm() -> void:
+	if alarm_tween:
+		alarm_tween.kill()
+		alarm_tween = null
+	alarm_border.visible = false
+
+func _on_time_up() -> void:
+	if completed_combos >= COMBOS_TO_WIN:
+		return # already won, ignore
+	timer_running = false
+	_stop_alarm()
+	_show_lose_screen()
 
 func _on_icon_hover(icon_name: String) -> void:
 	if in_combo_system:
@@ -88,6 +155,8 @@ func _on_icon_unhover() -> void:
 	instruction_panel.visible = false
 
 func _unhandled_key_input(event: InputEvent) -> void:
+	if not timer_running:
+		return
 	if not event is InputEventKey or not event.pressed or event.echo:
 		return
 
@@ -108,7 +177,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		pop_out(ceiling)
 		await get_tree().create_timer(0.05).timeout
 		pop_in(ceiling)
-		
+
 		_play_combo_animation(active_combo)
 
 		combo_step += 1
@@ -146,9 +215,7 @@ func _complete_combo() -> void:
 	health_tween.tween_property(health_bar, "value", target_health, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 	await get_tree().create_timer(0.6).timeout
-	health_bar.value = target_health 
-	print("Health bar value: ", health_bar.value)
-	print("target health: ", target_health)
+	health_bar.value = target_health
 	success_label.visible = true
 	health_bar.visible = false
 
@@ -166,7 +233,9 @@ func _complete_combo() -> void:
 		_show_victory()
 
 func _show_victory() -> void:
-	in_combo_system = false # locked out of re-entering combos once victory sequence starts
+	in_combo_system = false
+	timer_running = false
+	_stop_alarm()
 
 	await get_tree().create_timer(1.0).timeout
 	victory_panel.visible = true
@@ -185,6 +254,19 @@ func _exit_combo_system() -> void:
 	instruction_panel.visible = false
 	combo_progress_label.visible = false
 
+func _show_lose_screen() -> void:
+	in_combo_system = false
+	active_combo = ""
+	instruction_panel.visible = false
+	combo_progress_label.visible = false
+	lose_panel.visible = true
+
+func _on_restart_pressed() -> void:
+	get_tree().change_scene_to_file(MAIN_MENU_PATH)
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+
 func pop_out(sprite) -> void:
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
@@ -198,8 +280,7 @@ func pop_in(sprite) -> void:
 # ---------------
 
 func _get_ceiling_screen_pos() -> Vector2:
-	# return get_global_transform_with_canvas().affine_inverse() * ceiling.get_global_transform_with_canvas().origin
-	return Vector2(4500, -1500)
+	return ceiling.global_position + ceiling.size / 2
 
 func _play_combo_animation(combo_name: String) -> void:
 	match combo_name:
@@ -212,21 +293,21 @@ func _play_combo_animation(combo_name: String) -> void:
 		"Fry":
 			_play_fry()
 
-func _play_hit_burst(impact: TextureRect) -> void:
+func _play_hit_burst(impact_template: TextureRect) -> void:
 	var center := _get_ceiling_screen_pos()
-	print(center)
-	
 	var hit_count := 3
 	var stagger := 0.1
 
 	for i in range(hit_count):
-		var offset := Vector2(randf_range(-1500, 1500), randf_range(-1500, 1500))
-		_play_single_impact(impact, center + offset, i * stagger)
-		await get_tree().create_timer(0.15).timeout
+		var offset := Vector2(randf_range(-60, 60), randf_range(-6, 6))
+		var impact_instance := impact_template.duplicate() as TextureRect
+		add_child(impact_instance)
+		impact_instance.visible = false
+		_play_single_impact(impact_instance, center + offset, i * stagger, true)
 
-func _play_single_impact(impact: TextureRect, pos: Vector2, delay: float) -> void:
+func _play_single_impact(impact: TextureRect, pos: Vector2, delay: float, free_when_done: bool = false) -> void:
 	impact.position = pos - impact.size / 2
-	impact.scale = Vector2.ZERO
+	impact.scale = Vector2(0.1, 0.1)
 	impact.modulate.a = 1.0
 
 	var tween = create_tween()
@@ -236,27 +317,28 @@ func _play_single_impact(impact: TextureRect, pos: Vector2, delay: float) -> voi
 	tween.tween_property(impact, "scale", Vector2(1.0, 1.0), 0.04)
 	tween.parallel().tween_property(impact, "modulate:a", 0.0, 0.1).set_delay(0.05)
 	tween.tween_callback(func(): impact.visible = false)
+	if free_when_done:
+		tween.tween_callback(func(): impact.queue_free())
 
 func _play_electrocute() -> void:
 	var center := _get_ceiling_screen_pos()
-	print(center)
 
-	taser_impact.position = center + Vector2(-4050, -3000) - taser_impact.size / 2
-	taser_impact.scale = Vector2(4, 4)
+	taser_impact.position = center + Vector2(-3, 0) - taser_impact.size / 2
+	taser_impact.scale = Vector2(0.3,0.3)
 	taser_impact.modulate.a = 1.0
 	taser_impact.visible = true
 
-	electric_wire_impact.position = center + Vector2(-4050, -3000) - electric_wire_impact.size / 2
-	electric_wire_impact.scale = Vector2(4, 4)
+	electric_wire_impact.position = center + Vector2(5, 0) - electric_wire_impact.size / 2
+	electric_wire_impact.scale = Vector2(0.3,0.3)
 	electric_wire_impact.modulate.a = 1.0
 
 	var taser_tween = create_tween()
-	taser_tween.tween_property(taser_impact, "scale", Vector2(4,4), 0.08).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	taser_tween.tween_property(taser_impact, "scale", Vector2(0.3, 0.3), 0.08).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 	var wire_tween = create_tween()
 	wire_tween.tween_interval(0.05)
 	wire_tween.tween_callback(func(): electric_wire_impact.visible = true)
-	wire_tween.tween_property(electric_wire_impact, "scale", Vector2(4,4), 0.06)
+	wire_tween.tween_property(electric_wire_impact, "scale", Vector2(0.3, 0.3), 0.06)
 	for i in range(4):
 		wire_tween.tween_property(electric_wire_impact, "position:x", electric_wire_impact.position.x + 3, 0.02)
 		wire_tween.tween_property(electric_wire_impact, "position:x", electric_wire_impact.position.x - 3, 0.02)
@@ -277,8 +359,7 @@ func _play_electrocute() -> void:
 
 func _play_fry() -> void:
 	var center := _get_ceiling_screen_pos()
-	print(center)
-	var pan_target_pos := center + Vector2(-3000, -1500) - frying_impact.size / 2
+	var pan_target_pos := center + Vector2(0, 60) - frying_impact.size / 2
 	var pan_start_pos := pan_target_pos + Vector2(0, 30)
 
 	frying_impact.position = pan_start_pos
