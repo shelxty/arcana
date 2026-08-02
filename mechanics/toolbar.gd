@@ -21,13 +21,22 @@ extends Control
 @onready var electric_wire_impact: TextureRect = $ElectricWireImpact
 @onready var frying_impact: TextureRect = $FryingImpact
 
+<<<<<<< HEAD
 var combo_text := {
 	"Punch": "Combo: X + P + M",
 	"Kick": "Combo: K + 1 + B + M",
 	"Electrocute": "Combo: Shift + D + W ",
+=======
+# Human-readable instructions shown on hover
+var combo_text := {
+	"Punch": "Combo: X + P + M",
+	"Kick": "Combo: 7 + B + alt + A",
+	"Electrocute": "Combo: 0 + V + ",
+>>>>>>> parent of dea2ac9 (asdf nasl;fbjlf)
 	"Fry": "Combo: L + Q + T + H",
 }
 
+# Actual input sequences the player must press, in order.
 var combo_sequences := {
 	"Punch": [KEY_X, KEY_P, KEY_M],
 	"Kick": [KEY_K, KEY_1, KEY_B, KEY_M],
