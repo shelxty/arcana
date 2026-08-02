@@ -15,6 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://hqydpne51o4e" path="res://assets/art/PunchIconCeil.png" id="11_ffq0o"]
 [ext_resource type="Texture2D" uid="uid://cfv1m5mjonl8w" path="res://assets/art/Kick2IconCeil.png" id="12_ooebn"]
 [ext_resource type="Texture2D" uid="uid://wf31t2injf23" path="res://assets/art/Tase2IconCeil.png" id="13_vavjp"]
+[ext_resource type="Texture2D" uid="uid://bqrq7xk82tmml" path="res://assets/art/YouLoseScreen.png" id="16_uj2of"]
+[ext_resource type="Texture2D" uid="uid://dw85moxw5behh" path="res://assets/art/RestartButton.PNG" id="17_uj2of"]
+[ext_resource type="Texture2D" uid="uid://t4mnbsrbhg27" path="res://assets/art/QuitButton.PNG" id="18_853ef"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ki58t"]
 load_path = "res://.godot/imported/PunchIconCeil.png-5edc7eff9184be7a28f67be74cd38557.ctex"
@@ -24,46 +27,43 @@ load_path = "res://.godot/imported/Kick2IconCeil.png-34f6115ea6378bacffa9517f982
 
 [node name="Control" type="Control" unique_id=1622590886]
 layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -151.0
-offset_top = -98.0
-offset_right = 7381.0
-offset_bottom = 1688.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.05, 0.05)
-script = ExtResource("1_v4d7s")
-
-[node name="Background" type="TextureRect" parent="." unique_id=1689731554]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8559.999
-offset_top = -10939.999
-offset_right = 7187.999
-offset_bottom = 333.99902
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v4d7s")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1689731554]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_nhm53")
 
 [node name="Ceiling" type="TextureRect" parent="." unique_id=1164904905]
-layout_mode = 0
-offset_left = -240.0
-offset_top = -5780.0
-offset_right = 2326.6667
-offset_bottom = -3506.6667
-scale = Vector2(3, 3)
+layout_mode = 1
+offset_left = 359.0
+offset_top = 221.0
+offset_right = 2237.0
+offset_bottom = 2007.0
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_xjdkt")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=277800525]
-layout_mode = 0
-offset_right = 7528.0
-offset_bottom = 1786.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = 178.0
+offset_right = 7280.0
+offset_bottom = 1964.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.075, 0.075)
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=83598636]
 layout_mode = 2
@@ -204,147 +204,150 @@ theme_override_font_sizes/font_size = 600
 text = "asd"
 
 [node name="SuccessLabel" type="TextureRect" parent="." unique_id=1394625250]
-visible = false
 layout_mode = 0
-offset_left = -8640.0
-offset_top = -11040.0
-offset_right = 14939.998
-offset_bottom = 2239.999
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_cvonl")
 
 [node name="HealthBar" type="TextureProgressBar" parent="." unique_id=762326329]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -1.1072756
-anchor_top = -0.18700995
-anchor_right = -1.1072756
-anchor_bottom = -0.18700995
-offset_top = -1786.0
-offset_right = 1878.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -230.0
+offset_right = 1892.0
+offset_bottom = 1556.0
 grow_vertical = 0
-scale = Vector2(4, 4)
+scale = Vector2(0.15, 0.15)
 max_value = 4.0
 value = 4.0
 rounded = true
 texture_under = ExtResource("9_up1h0")
 texture_progress = ExtResource("10_tbj17")
-metadata/_edit_use_anchors_ = true
 
 [node name="VictoryPanel" type="Panel" parent="." unique_id=1808777007]
-layout_mode = 0
-offset_left = -8600.0
-offset_top = -1140.0
-offset_right = 14819.998
-offset_bottom = 2220.0
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -33.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="VictoryLabel" type="Label" parent="VictoryPanel" unique_id=711393842]
-layout_mode = 0
-offset_left = 1880.0
-offset_top = 1180.0002
-offset_right = 21476.0
-offset_bottom = 3240.0002
-theme_override_font_sizes/font_size = 650
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -241.5
+offset_top = -28.0
+offset_right = 241.5
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "I did what I had to do! You wouldn't understand! You're wrong!"
 
 [node name="CorrectFlash" type="TextureRect" parent="." unique_id=548197548]
 visible = false
-layout_mode = 0
-offset_left = -8639.999
-offset_top = -11059.999
-offset_right = 15019.999
-offset_bottom = 2279.999
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_hnuti")
 
 [node name="IncorrectFlash" type="TextureRect" parent="." unique_id=1276925926]
 visible = false
 layout_mode = 0
-offset_left = -8619.999
-offset_top = -10939.999
-offset_right = 14879.999
-offset_bottom = 2179.999
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
 mouse_filter = 2
 texture = ExtResource("8_cvonl")
 
 [node name="PunchImpact" type="TextureRect" parent="." unique_id=234275693]
-visible = false
 layout_mode = 0
-offset_left = 1640.0
-offset_top = -4720.0
-offset_right = 3518.0
-offset_bottom = -2934.0
-scale = Vector2(3, 3)
+offset_right = 1878.0
+offset_bottom = 1786.0
+scale = Vector2(0.1, 0.1)
 mouse_filter = 2
 texture = ExtResource("11_ffq0o")
 
 [node name="KickImpact" type="TextureRect" parent="." unique_id=1407218323]
-visible = false
 layout_mode = 0
-offset_left = 1600.0
-offset_top = -4640.0
-offset_right = 3478.0
-offset_bottom = -2854.0
-scale = Vector2(3, 3)
+offset_left = 436.99997
+offset_top = 330.99997
+offset_right = 2315.0
+offset_bottom = 2117.0
+scale = Vector2(0.1, 0.1)
 mouse_filter = 2
 texture = ExtResource("12_ooebn")
 
 [node name="TaserImpact" type="TextureRect" parent="." unique_id=1504780347]
-visible = false
 layout_mode = 0
-offset_left = 1260.0
-offset_top = -4780.0
-offset_right = 3138.0
-offset_bottom = -2994.0
-scale = Vector2(3, 3)
+offset_left = 279.00003
+offset_top = 147.0
+offset_right = 2157.0
+offset_bottom = 1933.0
+scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 texture = ExtResource("2_vwbkn")
 
 [node name="ElectricWireImpact" type="TextureRect" parent="." unique_id=1293590668]
-visible = false
 layout_mode = 0
-offset_left = 1260.0
-offset_top = -4780.0
-offset_right = 3138.0
-offset_bottom = -2994.0
-scale = Vector2(3, 3)
+offset_left = 274.0
+offset_top = 161.0
+offset_right = 2152.0
+offset_bottom = 1947.0
+scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 texture = ExtResource("13_vavjp")
 
 [node name="FryingImpact" type="TextureRect" parent="." unique_id=1923705542]
 layout_mode = 0
-offset_left = 20.000244
-offset_top = -4780.0
-offset_right = 2191.3335
-offset_bottom = -2994.0
-scale = Vector2(3, 3)
+offset_left = 386.0
+offset_top = 269.0
+offset_right = 2264.0
+offset_bottom = 2055.0
+scale = Vector2(0.25, 0.25)
 mouse_filter = 2
 texture = ExtResource("4_nhm53")
 
 [node name="TimerLabel" type="Label" parent="." unique_id=620103868]
-layout_mode = 0
-offset_right = 1520.0
-offset_bottom = 480.0
-
-[node name="AlarmBorder" type="TextureRect" parent="." unique_id=409828745]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.03983006
-anchor_top = 0.033594623
-anchor_right = 1.180563
-anchor_bottom = 1.0335946
-offset_left = -8900.0
-offset_top = -11040.0
-offset_right = 7367.998
-offset_bottom = 473.99805
+offset_right = 48.0
+offset_bottom = 23.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(100, 0)
+theme_override_font_sizes/font_size = 70
+text = "TIMER"
+
+[node name="AlarmBorder" type="ColorRect" parent="." unique_id=450230455]
+modulate = Color(1, 1, 1, 0.34117648)
+self_modulate = Color(1, 1, 1, 0.45490196)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+color = Color(0.9775407, 0.7499035, 0.6893744, 1)
 
-[node name="LosePanel" type="Panel" parent="AlarmBorder" unique_id=860007743]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="LosePanel" type="Panel" parent="." unique_id=860007743]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1820.4998
+offset_bottom = 1141.9999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
 
-<<<<<<< HEAD
 [node name="MarginContainer" type="MarginContainer" parent="LosePanel" unique_id=10380000]
 layout_mode = 1
 anchors_preset = 15
@@ -356,21 +359,29 @@ offset_right = -17.5
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-=======
-[node name="MarginContainer" type="MarginContainer" parent="AlarmBorder/LosePanel" unique_id=10380000]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
->>>>>>> parent of 80285f4 (Merge pull request #4 from shelxty/mechanics5)
 
-[node name="LoseLabel" type="Label" parent="AlarmBorder/LosePanel/MarginContainer" unique_id=47413050]
+[node name="TextureRect" type="TextureRect" parent="LosePanel/MarginContainer" unique_id=1371709693]
+visible = false
 layout_mode = 2
+texture = ExtResource("16_uj2of")
+
+[node name="LoseLabel" type="Label" parent="LosePanel/MarginContainer" unique_id=768648963]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "You lost!"
 
-[node name="RestartButton" type="Label" parent="AlarmBorder/LosePanel/MarginContainer" unique_id=1994713117]
+[node name="RestartButton" type="Button" parent="LosePanel/MarginContainer" unique_id=1198924526]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "Restart"
+icon = ExtResource("17_uj2of")
 
-[node name="QuitButton" type="Label" parent="AlarmBorder/LosePanel/MarginContainer" unique_id=1687012108]
+[node name="QuitButton" type="Button" parent="LosePanel/MarginContainer" unique_id=150656073]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+offset_transform_position_ratio = Vector2(0, 2)
 text = "Quit"
+icon = ExtResource("18_853ef")

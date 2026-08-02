@@ -1,0 +1,349 @@
+[gd_scene format=3 uid="uid://d30egrjfqg4ta"]
+
+[ext_resource type="Script" uid="uid://c1flry8d1hf0f" path="res://mechanics/toolbar.gd" id="1_mh8lb"]
+[ext_resource type="Texture2D" uid="uid://baj0a2qxjw251" path="res://assets/art/HoldingCell.png" id="2_omasq"]
+[ext_resource type="Texture2D" uid="uid://eetvb3f6pvpn" path="res://assets/Ceiling_Seal.png" id="3_y12ij"]
+[ext_resource type="PackedScene" uid="uid://dxiik0fb5mmsj" path="res://mechanics/button.tscn" id="4_fk7qr"]
+[ext_resource type="Texture2D" uid="uid://cx56po84xjn8v" path="res://assets/art/Tase1IconCeil.png" id="5_fi4ni"]
+[ext_resource type="Texture2D" uid="uid://b1x58rpwwhryx" path="res://assets/art/Tase3IconCeil.png" id="6_hpfdn"]
+[ext_resource type="Texture2D" uid="uid://dxknjjtjdhvpr" path="res://assets/art/FryIconCeil.png" id="7_3pphw"]
+[ext_resource type="Texture2D" uid="uid://bqd6ei2vbaaux" path="res://assets/KO_KeyboardComboRight.png" id="8_vcs6s"]
+[ext_resource type="Texture2D" uid="uid://cvnpc7j2yc6jk" path="res://assets/art/CeilProgressBarEmpty.png" id="9_ph7a4"]
+[ext_resource type="Texture2D" uid="uid://datpyw6qg1ta7" path="res://assets/art/CeilProgressBarFull.png" id="10_3su1e"]
+[ext_resource type="Texture2D" uid="uid://kkk374ego74u" path="res://assets/art/WrongTorture.png" id="11_2j2lb"]
+[ext_resource type="Texture2D" uid="uid://ihsieb2v3uxc" path="res://assets/art/RightAction.png" id="12_c0vuf"]
+[ext_resource type="Texture2D" uid="uid://hqydpne51o4e" path="res://assets/art/PunchIconCeil.png" id="13_51uoj"]
+[ext_resource type="Texture2D" uid="uid://cfv1m5mjonl8w" path="res://assets/art/Kick2IconCeil.png" id="14_ifp5j"]
+[ext_resource type="Texture2D" uid="uid://wf31t2injf23" path="res://assets/art/Tase2IconCeil.png" id="15_aeykv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ki58t"]
+load_path = "res://.godot/imported/PunchIconCeil.png-5edc7eff9184be7a28f67be74cd38557.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hnuti"]
+load_path = "res://.godot/imported/Kick2IconCeil.png-34f6115ea6378bacffa9517f9827f598.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vavjp"]
+
+[node name="Control" type="Control" unique_id=1622590886]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = -98.0
+offset_right = 7381.0
+offset_bottom = 1688.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.05, 0.05)
+script = ExtResource("1_mh8lb")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1689731554]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8559.999
+offset_top = -10939.999
+offset_right = 7187.999
+offset_bottom = 333.99902
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_omasq")
+
+[node name="Ceiling" type="TextureRect" parent="." unique_id=1164904905]
+layout_mode = 0
+offset_left = 1500.0
+offset_top = -4500.0
+offset_right = 3378.0
+offset_bottom = -2714.0
+scale = Vector2(3, 3)
+texture = ExtResource("3_y12ij")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=277800525]
+layout_mode = 0
+offset_right = 7528.0
+offset_bottom = 1786.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=83598636]
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Punch" parent="HBoxContainer" unique_id=1088679414 instance=ExtResource("4_fk7qr")]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_ki58t")
+texture_pressed = null
+texture_hover = null
+texture_focused = null
+
+[node name="HotkeyLabel" type="Label" parent="HBoxContainer/Punch" unique_id=952149256]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = -336.0
+offset_right = -188.0
+offset_bottom = -313.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(25, 25)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "A"
+
+[node name="Kick" parent="HBoxContainer" unique_id=1572165140 instance=ExtResource("4_fk7qr")]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_hnuti")
+texture_pressed = null
+texture_hover = null
+texture_focused = null
+flip_h = true
+
+[node name="HotkeyLabel2" type="Label" parent="HBoxContainer/Kick" unique_id=346450555]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -378.0
+offset_top = -336.0
+offset_right = -338.0
+offset_bottom = -313.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(25, 25)
+text = "B"
+
+[node name="Electrocute" parent="HBoxContainer" unique_id=1728629910 instance=ExtResource("4_fk7qr")]
+layout_mode = 2
+texture_normal = ExtResource("5_fi4ni")
+texture_pressed = null
+texture_hover = ExtResource("6_hpfdn")
+texture_focused = null
+
+[node name="HotkeyLabel3" type="Label" parent="HBoxContainer/Electrocute" unique_id=324019596]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = -336.0
+offset_right = -188.0
+offset_bottom = -313.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(25, 25)
+text = "C"
+
+[node name="Fry" parent="HBoxContainer" unique_id=1439145894 instance=ExtResource("4_fk7qr")]
+layout_mode = 2
+texture_normal = ExtResource("7_3pphw")
+texture_pressed = null
+texture_hover = null
+texture_focused = null
+
+[node name="HotkeyLabel4" type="Label" parent="HBoxContainer/Fry" unique_id=736379591]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -378.0
+offset_top = -336.0
+offset_right = -338.0
+offset_bottom = -313.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(25, 25)
+text = "D"
+
+[node name="InstructionPanel" type="Panel" parent="." unique_id=1947165481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8699.999
+offset_top = -10500.0
+offset_right = 6500.0
+offset_bottom = -10500.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="InstructionPanel" unique_id=1786865534]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InstructionLabel" type="Label" parent="InstructionPanel/MarginContainer" unique_id=1609377404]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 400
+text = "asdf asdf asdfvasdvfasdfvasdvfasdfv"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ComboProgressLabel" type="Label" parent="." unique_id=1870418874]
+layout_mode = 0
+offset_left = -7979.999
+offset_top = -10299.999
+offset_right = -7939.999
+offset_bottom = -10276.999
+theme_override_font_sizes/font_size = 600
+text = "asd"
+
+[node name="SuccessLabel" type="TextureRect" parent="." unique_id=1394625250]
+visible = false
+layout_mode = 0
+offset_left = -8640.0
+offset_top = -11040.0
+offset_right = 14939.998
+offset_bottom = 2239.999
+texture = ExtResource("8_vcs6s")
+
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=762326329]
+layout_mode = 0
+offset_left = 500.0
+offset_top = -9880.0
+offset_right = 2378.0
+offset_bottom = -8094.0
+scale = Vector2(4, 4)
+max_value = 4.0
+value = 4.0
+rounded = true
+texture_under = ExtResource("9_ph7a4")
+texture_progress = ExtResource("10_3su1e")
+
+[node name="VictoryPanel" type="Panel" parent="." unique_id=1808777007]
+layout_mode = 0
+offset_left = -7979.999
+offset_top = -10299.999
+offset_right = -7939.999
+offset_bottom = -10259.999
+
+[node name="VictoryLabel" type="Label" parent="VictoryPanel" unique_id=711393842]
+layout_mode = 0
+offset_left = 1879.9993
+offset_top = 2639.9985
+offset_right = 21476.0
+offset_bottom = 3525.9985
+theme_override_font_sizes/font_size = 650
+text = "I did what I had to do! You wouldn't understand! You're wrong!"
+
+[node name="CorrectFlash" type="TextureRect" parent="." unique_id=548197548]
+layout_mode = 0
+offset_left = -8639.999
+offset_top = -11059.999
+offset_right = 15019.999
+offset_bottom = 2279.999
+texture = ExtResource("11_2j2lb")
+
+[node name="IncorrectFlash" type="TextureRect" parent="." unique_id=1276925926]
+layout_mode = 0
+offset_left = -8619.999
+offset_top = -10939.999
+offset_right = 14879.999
+offset_bottom = 2179.999
+mouse_filter = 2
+texture = ExtResource("12_c0vuf")
+
+[node name="PunchImpact" type="TextureRect" parent="." unique_id=234275693]
+layout_mode = 0
+offset_left = 1640.0
+offset_top = -4720.0
+offset_right = 3518.0
+offset_bottom = -2934.0
+scale = Vector2(3, 3)
+mouse_filter = 2
+texture = ExtResource("13_51uoj")
+
+[node name="KickImpact" type="TextureRect" parent="." unique_id=1407218323]
+layout_mode = 0
+offset_left = 1600.0
+offset_top = -4640.0
+offset_right = 3478.0
+offset_bottom = -2854.0
+scale = Vector2(3, 3)
+mouse_filter = 2
+texture = ExtResource("14_ifp5j")
+
+[node name="TaserImpact" type="TextureRect" parent="." unique_id=1504780347]
+layout_mode = 0
+offset_left = 1260.0
+offset_top = -4780.0
+offset_right = 3138.0
+offset_bottom = -2994.0
+scale = Vector2(3, 3)
+mouse_filter = 2
+texture = ExtResource("5_fi4ni")
+
+[node name="ElectricWireImpact" type="TextureRect" parent="." unique_id=1293590668]
+layout_mode = 0
+offset_left = 1260.0
+offset_top = -4780.0
+offset_right = 3138.0
+offset_bottom = -2994.0
+scale = Vector2(3, 3)
+mouse_filter = 2
+texture = ExtResource("15_aeykv")
+
+[node name="FryingImpact" type="TextureRect" parent="." unique_id=1923705542]
+layout_mode = 0
+offset_left = 1260.0
+offset_top = -4780.0
+offset_right = 3138.0
+offset_bottom = -2994.0
+scale = Vector2(3, 3)
+mouse_filter = 2
+texture = ExtResource("7_3pphw")
+
+[node name="TimerLabel" type="Label" parent="." unique_id=620103868]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AlarmBorder" type="TextureRect" parent="." unique_id=409828745]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8639.999
+offset_top = -10979.999
+offset_right = 7627.999
+offset_bottom = 533.999
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LosePanel" type="Panel" parent="AlarmBorder" unique_id=860007743]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vavjp")
+
+[node name="MarginContainer" type="MarginContainer" parent="AlarmBorder/LosePanel" unique_id=10380000]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LoseLabel" type="Label" parent="AlarmBorder/LosePanel/MarginContainer" unique_id=47413050]
+layout_mode = 2
+theme_override_font_sizes/font_size = 500
+text = "You lost!"
+
+[node name="RestartButton" type="Label" parent="AlarmBorder/LosePanel/MarginContainer" unique_id=1994713117]
+layout_mode = 2
+text = "Restart"
+
+[node name="QuitButton" type="Label" parent="AlarmBorder/LosePanel/MarginContainer" unique_id=1687012108]
+layout_mode = 2
+text = "Quit"
