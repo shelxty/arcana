@@ -23,7 +23,7 @@ extends Control
 
 # Human-readable instructions shown on hover
 var combo_text := {
-	"Punch": "Combo: X + P + M",
+	"Punch": "Combo: F + Q + P",
 	"Kick": "Combo: 7 + B + alt + A",
 	"Electrocute": "Combo: 0 + V + ",
 	"Fry": "Combo: L + Q + T + H",
@@ -31,7 +31,7 @@ var combo_text := {
 
 # Actual input sequences the player must press, in order.
 var combo_sequences := {
-	"Punch": [KEY_X, KEY_P, KEY_M],
+	"Punch": [KEY_F, KEY_Q, KEY_P],
 	"Kick": [KEY_K, KEY_1, KEY_B, KEY_M],
 	"Electrocute": [KEY_SHIFT, KEY_D, KEY_W],
 	"Fry": [KEY_L, KEY_Q, KEY_T, KEY_H],

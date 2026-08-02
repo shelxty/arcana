@@ -1,20 +1,20 @@
-[gd_scene format=3 uid="uid://ckef3345uqv1x"]
+[gd_scene format=3 uid="uid://cj77xebmctct"]
 
-[ext_resource type="PackedScene" uid="uid://dxiik0fb5mmsj" path="res://mechanics/button.tscn" id="1_clsrh"]
-[ext_resource type="Script" uid="uid://c1flry8d1hf0f" path="res://mechanics/toolbar.gd" id="1_v4d7s"]
-[ext_resource type="Texture2D" uid="uid://baj0a2qxjw251" path="res://assets/art/HoldingCell.png" id="2_nhm53"]
-[ext_resource type="Texture2D" uid="uid://cx56po84xjn8v" path="res://assets/art/Tase1IconCeil.png" id="2_vwbkn"]
-[ext_resource type="Texture2D" uid="uid://b1x58rpwwhryx" path="res://assets/art/Tase3IconCeil.png" id="3_v4d7s"]
-[ext_resource type="Texture2D" uid="uid://eetvb3f6pvpn" path="res://assets/Ceiling_Seal.png" id="3_xjdkt"]
-[ext_resource type="Texture2D" uid="uid://dxknjjtjdhvpr" path="res://assets/art/FryIconCeil.png" id="4_nhm53"]
-[ext_resource type="Texture2D" uid="uid://bqd6ei2vbaaux" path="res://assets/KO_KeyboardComboRight.png" id="7_cvonl"]
-[ext_resource type="Texture2D" uid="uid://kkk374ego74u" path="res://assets/art/WrongTorture.png" id="7_hnuti"]
-[ext_resource type="Texture2D" uid="uid://ihsieb2v3uxc" path="res://assets/art/RightAction.png" id="8_cvonl"]
-[ext_resource type="Texture2D" uid="uid://cvnpc7j2yc6jk" path="res://assets/art/CeilProgressBarEmpty.png" id="9_up1h0"]
-[ext_resource type="Texture2D" uid="uid://datpyw6qg1ta7" path="res://assets/art/CeilProgressBarFull.png" id="10_tbj17"]
-[ext_resource type="Texture2D" uid="uid://hqydpne51o4e" path="res://assets/art/PunchIconCeil.png" id="11_ffq0o"]
-[ext_resource type="Texture2D" uid="uid://cfv1m5mjonl8w" path="res://assets/art/Kick2IconCeil.png" id="12_ooebn"]
-[ext_resource type="Texture2D" uid="uid://wf31t2injf23" path="res://assets/art/Tase2IconCeil.png" id="13_vavjp"]
+[ext_resource type="Script" uid="uid://djurxipq1ew5" path="res://scenes/scene_2.gd" id="1_fyxpx"]
+[ext_resource type="Texture2D" uid="uid://baj0a2qxjw251" path="res://assets/art/HoldingCell.png" id="2_rw3aw"]
+[ext_resource type="Texture2D" uid="uid://eetvb3f6pvpn" path="res://assets/Ceiling_Seal.png" id="3_uye5l"]
+[ext_resource type="PackedScene" uid="uid://dxiik0fb5mmsj" path="res://mechanics/button.tscn" id="4_st061"]
+[ext_resource type="Texture2D" uid="uid://cx56po84xjn8v" path="res://assets/art/Tase1IconCeil.png" id="5_idm5k"]
+[ext_resource type="Texture2D" uid="uid://b1x58rpwwhryx" path="res://assets/art/Tase3IconCeil.png" id="6_lo5ak"]
+[ext_resource type="Texture2D" uid="uid://dxknjjtjdhvpr" path="res://assets/art/FryIconCeil.png" id="7_ejtd4"]
+[ext_resource type="Texture2D" uid="uid://bqd6ei2vbaaux" path="res://assets/KO_KeyboardComboRight.png" id="8_cg17d"]
+[ext_resource type="Texture2D" uid="uid://cvnpc7j2yc6jk" path="res://assets/art/CeilProgressBarEmpty.png" id="9_l6jw0"]
+[ext_resource type="Texture2D" uid="uid://datpyw6qg1ta7" path="res://assets/art/CeilProgressBarFull.png" id="10_hl20s"]
+[ext_resource type="Texture2D" uid="uid://kkk374ego74u" path="res://assets/art/WrongTorture.png" id="11_qmhjb"]
+[ext_resource type="Texture2D" uid="uid://ihsieb2v3uxc" path="res://assets/art/RightAction.png" id="12_f8hjr"]
+[ext_resource type="Texture2D" uid="uid://hqydpne51o4e" path="res://assets/art/PunchIconCeil.png" id="13_avfqc"]
+[ext_resource type="Texture2D" uid="uid://cfv1m5mjonl8w" path="res://assets/art/Kick2IconCeil.png" id="14_dr4om"]
+[ext_resource type="Texture2D" uid="uid://wf31t2injf23" path="res://assets/art/Tase2IconCeil.png" id="15_ddn5f"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ki58t"]
 load_path = "res://.godot/imported/PunchIconCeil.png-5edc7eff9184be7a28f67be74cd38557.ctex"
@@ -36,7 +36,7 @@ offset_bottom = 1688.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.05, 0.05)
-script = ExtResource("1_v4d7s")
+script = ExtResource("1_fyxpx")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1689731554]
 layout_mode = 1
@@ -49,7 +49,7 @@ offset_right = 7187.999
 offset_bottom = 333.99902
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_nhm53")
+texture = ExtResource("2_rw3aw")
 
 [node name="Ceiling" type="TextureRect" parent="." unique_id=1164904905]
 layout_mode = 0
@@ -58,7 +58,7 @@ offset_top = -5780.0
 offset_right = 2326.6667
 offset_bottom = -3506.6667
 scale = Vector2(3, 3)
-texture = ExtResource("3_xjdkt")
+texture = ExtResource("3_uye5l")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=277800525]
 layout_mode = 0
@@ -69,7 +69,7 @@ offset_bottom = 1786.0
 layout_mode = 2
 stretch_mode = 3
 
-[node name="Punch" parent="HBoxContainer" unique_id=1088679414 instance=ExtResource("1_clsrh")]
+[node name="Punch" parent="HBoxContainer" unique_id=1088679414 instance=ExtResource("4_st061")]
 layout_mode = 2
 texture_normal = SubResource("CompressedTexture2D_ki58t")
 texture_pressed = null
@@ -93,7 +93,7 @@ scale = Vector2(25, 25)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "A"
 
-[node name="Kick" parent="HBoxContainer" unique_id=1572165140 instance=ExtResource("1_clsrh")]
+[node name="Kick" parent="HBoxContainer" unique_id=1572165140 instance=ExtResource("4_st061")]
 layout_mode = 2
 texture_normal = SubResource("CompressedTexture2D_hnuti")
 texture_pressed = null
@@ -117,11 +117,11 @@ grow_vertical = 0
 scale = Vector2(25, 25)
 text = "B"
 
-[node name="Electrocute" parent="HBoxContainer" unique_id=1728629910 instance=ExtResource("1_clsrh")]
+[node name="Electrocute" parent="HBoxContainer" unique_id=1728629910 instance=ExtResource("4_st061")]
 layout_mode = 2
-texture_normal = ExtResource("2_vwbkn")
+texture_normal = ExtResource("5_idm5k")
 texture_pressed = null
-texture_hover = ExtResource("3_v4d7s")
+texture_hover = ExtResource("6_lo5ak")
 texture_focused = null
 
 [node name="HotkeyLabel3" type="Label" parent="HBoxContainer/Electrocute" unique_id=324019596]
@@ -140,9 +140,9 @@ grow_vertical = 0
 scale = Vector2(25, 25)
 text = "C"
 
-[node name="Fry" parent="HBoxContainer" unique_id=1439145894 instance=ExtResource("1_clsrh")]
+[node name="Fry" parent="HBoxContainer" unique_id=1439145894 instance=ExtResource("4_st061")]
 layout_mode = 2
-texture_normal = ExtResource("4_nhm53")
+texture_normal = ExtResource("7_ejtd4")
 texture_pressed = null
 texture_hover = null
 texture_focused = null
@@ -210,7 +210,7 @@ offset_left = -8640.0
 offset_top = -11040.0
 offset_right = 14939.998
 offset_bottom = 2239.999
-texture = ExtResource("7_cvonl")
+texture = ExtResource("8_cg17d")
 
 [node name="HealthBar" type="TextureProgressBar" parent="." unique_id=762326329]
 layout_mode = 1
@@ -226,8 +226,8 @@ scale = Vector2(4, 4)
 max_value = 4.0
 value = 4.0
 rounded = true
-texture_under = ExtResource("9_up1h0")
-texture_progress = ExtResource("10_tbj17")
+texture_under = ExtResource("9_l6jw0")
+texture_progress = ExtResource("10_hl20s")
 metadata/_edit_use_anchors_ = true
 
 [node name="VictoryPanel" type="Panel" parent="." unique_id=1808777007]
@@ -253,7 +253,7 @@ offset_left = -8639.999
 offset_top = -11059.999
 offset_right = 15019.999
 offset_bottom = 2279.999
-texture = ExtResource("7_hnuti")
+texture = ExtResource("11_qmhjb")
 
 [node name="IncorrectFlash" type="TextureRect" parent="." unique_id=1276925926]
 visible = false
@@ -263,7 +263,7 @@ offset_top = -10939.999
 offset_right = 14879.999
 offset_bottom = 2179.999
 mouse_filter = 2
-texture = ExtResource("8_cvonl")
+texture = ExtResource("12_f8hjr")
 
 [node name="PunchImpact" type="TextureRect" parent="." unique_id=234275693]
 visible = false
@@ -274,7 +274,7 @@ offset_right = 3518.0
 offset_bottom = -2934.0
 scale = Vector2(3, 3)
 mouse_filter = 2
-texture = ExtResource("11_ffq0o")
+texture = ExtResource("13_avfqc")
 
 [node name="KickImpact" type="TextureRect" parent="." unique_id=1407218323]
 visible = false
@@ -285,7 +285,7 @@ offset_right = 3478.0
 offset_bottom = -2854.0
 scale = Vector2(3, 3)
 mouse_filter = 2
-texture = ExtResource("12_ooebn")
+texture = ExtResource("14_dr4om")
 
 [node name="TaserImpact" type="TextureRect" parent="." unique_id=1504780347]
 visible = false
@@ -296,7 +296,7 @@ offset_right = 3138.0
 offset_bottom = -2994.0
 scale = Vector2(3, 3)
 mouse_filter = 2
-texture = ExtResource("2_vwbkn")
+texture = ExtResource("5_idm5k")
 
 [node name="ElectricWireImpact" type="TextureRect" parent="." unique_id=1293590668]
 visible = false
@@ -307,7 +307,7 @@ offset_right = 3138.0
 offset_bottom = -2994.0
 scale = Vector2(3, 3)
 mouse_filter = 2
-texture = ExtResource("13_vavjp")
+texture = ExtResource("15_ddn5f")
 
 [node name="FryingImpact" type="TextureRect" parent="." unique_id=1923705542]
 layout_mode = 0
@@ -317,7 +317,7 @@ offset_right = 2191.3335
 offset_bottom = -2994.0
 scale = Vector2(3, 3)
 mouse_filter = 2
-texture = ExtResource("4_nhm53")
+texture = ExtResource("7_ejtd4")
 
 [node name="TimerLabel" type="Label" parent="." unique_id=620103868]
 layout_mode = 0
