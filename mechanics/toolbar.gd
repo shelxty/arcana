@@ -21,7 +21,6 @@ extends Control
 @onready var electric_wire_impact: TextureRect = $ElectricWireImpact
 @onready var frying_impact: TextureRect = $FryingImpact
 
-# Human-readable instructions shown on hover
 var combo_text := {
 	"Punch": "Combo: X + P + M",
 	"Kick": "Combo: K + 1 + B + M",
@@ -29,7 +28,6 @@ var combo_text := {
 	"Fry": "Combo: L + Q + T + H",
 }
 
-# Actual input sequences the player must press, in order.
 var combo_sequences := {
 	"Punch": [KEY_X, KEY_P, KEY_M],
 	"Kick": [KEY_K, KEY_1, KEY_B, KEY_M],
@@ -176,6 +174,7 @@ func _show_victory() -> void:
 	victory_panel.visible = false
 
 	await get_tree().create_timer(2.0).timeout
+	Journal.add_auto_note("I did what I had to do! You wouldn't understand! You're wrong!")
 	get_tree().change_scene_to_file(NEXT_SCENE_PATH)
 
 func _exit_combo_system() -> void:

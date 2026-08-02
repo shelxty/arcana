@@ -33,7 +33,7 @@ var combo_text := {
 var combo_sequences := {
 	"Punch": [KEY_F, KEY_Q, KEY_P],
 	"Kick": [KEY_7, KEY_B, KEY_ALT, KEY_A],
-	"Electrocute": [KEY_0, KEY_V, KEY_W],
+	"Electrocute": [KEY_0, KEY_V, KEY_1],
 	"Fry": [KEY_Q, KEY_P, KEY_Z, KEY_M],
 }
 
