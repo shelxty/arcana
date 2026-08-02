@@ -23,12 +23,11 @@ extends Control
 
 var combo_text := {
 	"Punch": "Combo: X + P + M",
-	"Kick": "Combo: 7 + B + alt + A",
-	"Electrocute": "Combo: 0 + V + ",
+	"Kick": "Combo: K + 1 + B + M",
+	"Electrocute": "Combo: Shift + D + W ",
 	"Fry": "Combo: L + Q + T + H",
 }
 
-# Actual input sequences the player must press, in order.
 var combo_sequences := {
 	"Punch": [KEY_X, KEY_P, KEY_M],
 	"Kick": [KEY_K, KEY_1, KEY_B, KEY_M],

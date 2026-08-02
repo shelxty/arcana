@@ -29,12 +29,14 @@ var combo_text := {
 	"Fry": "Combo: Q + P + Z + M",
 }
 
+# Actual input sequences the player must press, in order.
 var combo_sequences := {
 	"Punch": [KEY_F, KEY_Q, KEY_P],
 	"Kick": [KEY_7, KEY_B, KEY_ALT, KEY_A],
 	"Electrocute": [KEY_0, KEY_V, KEY_1],
 	"Fry": [KEY_Q, KEY_P, KEY_Z, KEY_M],
 }
+
 
 var hotkey_to_combo := {
 	KEY_A: "Punch",
@@ -164,7 +166,7 @@ func _complete_combo() -> void:
 		_show_victory()
 
 func _show_victory() -> void:
-	in_combo_system = false 
+	in_combo_system = false # locked out of re-entering combos once victory sequence starts
 
 	await get_tree().create_timer(1.0).timeout
 	victory_panel.visible = true
